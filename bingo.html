@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ビンゴゲーム</title>
+        <link rel="stylesheet" href="./bingo.css">
+    </head>
+
+    <body>
+        <ul>
+            <li class="cell cell0" data-index="0">0</li>
+            <li class="cell cell1" data-index="1">0</li>
+            <li class="cell cell2" data-index="2">0</li>
+            <li class="cell cell3" data-index="3">0</li>
+            <li class="cell cell4" data-index="4">0</li>
+            <li class="cell cell5" data-index="5">0</li>
+            <li class="cell cell6" data-index="6">0</li>
+            <li class="cell cell7" data-index="7">0</li>
+            <li class="cell cell8" data-index="8">0</li>
+        </ul>
+        <script>
+            // ビンゴカードの条件
+            // 1 ~ 75までの数字を3x3に配置
+            // 縦, 横, 斜めの3つのマスが選択されたら、Bingo
+
+            // かぶらないように乱数を生成する
+            // 1. 配列を作る (1 ~ 75)
+            let numList = [...Array(75).keys()].map(i => ++i)
+            const board = [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+            ]
+
+            function getRandomNumber() {
+                // 2. 配列からランダムな添字で値を取り出す
+                const index = Math.floor(Math.random() * numList.length)
+                const randomNum = numList[index]
+
+                // 3. 配列から取り出した値と同じ値を消す
+                numList.splice(index, 1);
+
+                return randomNum
+            }
+
+            // 4. boardに反映する
+            const cells = document.querySelectorAll(".cell")
+            for (const cell of cells) {
+                cell.innerHTML = getRandomNumber()
+                cell.addEventListener("click", function (event) {
+                    event.target.style.backgroundColor = "#666"
+                    const index = event.target.dataset.index
+                    board[index] = true
+                    bingo()
+                })
+            }
+
+            function bingo() {
+                if (board[0] && board[1] && board[2] ||
+                    board[3] && board[4] && board[5] ||
+                    board[6] && board[7] && board[8] ||
+                    board[0] && board[3] && board[6] ||
+                    board[1] && board[4] && board[7] ||
+                    board[0] && board[4] && board[8] ||
+                    board[2] && board[4] && board[6]) {
+                    alert("Bingoだよ")
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>メニュー</title>
+        <link rel="stylesheet" href="./menu.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>
+                ポテト
+            </h1>
+            <!-- https://heroicons.com/ -->
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </header>
+        <div class="menu">
+            <ul>
+                <li>ダイワスカーレット</li>
+                <li>ゴールドシップ</li>
+                <li>ライスシャワー</li>
+                <li>サイレンススズカ</li>
+                <li>エイシンフラッシュ</li>
+            </ul>
+        </div>
+        <script>
+            document
+                .querySelector("button")
+                .addEventListener("click", function () {
+                    console.log("ボタン押されたよ");
+                    document
+                        .querySelector(".menu ul")
+                        .style.visibility = "visible"
+                })
+
+        </script>
+
+    </body>
+
+</html>

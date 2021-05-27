@@ -105,7 +105,35 @@
 
             // 三項演算子
             // 条件式 ? A : B
-            console.log(food === "みかん" ? "柑橘だよ" : "みかんじゃないよ");
+            // console.log(food === "みかん" ? "柑橘だよ" : "みかんじゃないよ");
+
+            // // 繰り返し文 (for)
+            // for (let index = 0; index < 10; index++) {
+            //     console.log(index)
+            // }
+
+            // // 繰り返し文 (for in) (for of)
+            // const foodList = [
+            //     "バナナ",
+            //     "パイナップル",
+            //     "いちご",
+            //     "梨"
+            // ]
+            // for (const value of foodList) {
+            //     console.log(value);
+            // }
+
+            for (let index = 1; index <= 100; index++) {
+                if (index % 15 === 0) {
+                    console.log("FizzBuzz");
+                } else if (index % 3 === 0) {
+                    console.log("Fizz");
+                } else if (index % 5 === 0) {
+                    console.log("Buzz");
+                } else {
+                    console.log(index);
+                }
+            }
 
         </script>
     </body>

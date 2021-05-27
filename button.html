@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>buttonでアクション</title>
+    </head>
+
+    <body>
+        <div>
+            <p>
+                私、廣澤和成の会社の役職は次のどれでしょうか？
+            </p>
+            <div>
+                <button id="button1">A. 社長</button>
+                <button id="button2">B. 副社長</button>
+                <button id="button3">C. 会長</button>
+                <button id="button4">D. 奴隷(WEB担当)</button>
+            </div>
+            <p class="answer"></p>
+        </div>
+
+        <script>
+            const message = document.querySelector(".answer")
+            const button1 = document.getElementById("button1")
+            button1.addEventListener("click", function () {
+                message.innerText = "不正解"
+            })
+            const button2 = document.getElementById("button2")
+            button2.addEventListener("click", function () {
+                message.innerText = "不正解"
+            })
+            const button3 = document.getElementById("button3")
+            button3.addEventListener("click", function () {
+                message.innerText = "不正解"
+            })
+            const button4 = document.getElementById("button4")
+            button4.addEventListener("click", function () {
+                message.innerText = "正解！"
+            })
+
+            // function 関数名(引数) {
+
+            // } 
+        </script>
+
+    </body>
+
+</html>
